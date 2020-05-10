@@ -1,0 +1,938 @@
+﻿{
+	"destination": "detailScreen",
+	"windowMinWidth": 1255,
+	"windowMinHeight": 555,
+	"rightMargin": 15,
+	"bottomMargin": 15,
+	"menuBar": "Barre #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onTimer",
+		"onResize"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Chemin_courant": {
+					"type": "input",
+					"top": 20,
+					"left": 304,
+					"width": 936,
+					"height": 14,
+					"sizingX": "grow",
+					"fontTheme": "additional",
+					"enterable": false,
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"chercherChaine": {
+					"type": "input",
+					"top": 41,
+					"left": 45,
+					"width": 170,
+					"height": 13,
+					"fontFamily": "Police système",
+					"fontSize": 10,
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/chercherChaine.4dm",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"lb_bibiothequeDossier": {
+					"type": "listbox",
+					"top": 60,
+					"left": 10,
+					"width": 285,
+					"height": 480,
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"hideFocusRing": true,
+					"movableRows": false,
+					"rowHeight": "25px",
+					"headerHeight": "17px",
+					"staticColumnCount": 3,
+					"dataSource": "Form:C1466.docs",
+					"currentItemSource": "Form:C1466.elmtCourantDoc",
+					"currentItemPositionSource": "Form:C1466.posCourantDoc",
+					"selectedItemsSource": "Form:C1466.SelectionDoc",
+					"scrollbarHorizontal": "automatic",
+					"fontFamily": "Police système",
+					"fontSize": 10,
+					"method": "ObjectMethods/lb_bibiothequeDossier.4dm",
+					"events": [
+						"onClick",
+						"onDoubleClick"
+					],
+					"columns": [
+						{
+							"name": "Col_lb_bibio_icon",
+							"dataSource": "This:C1470.extension.icon",
+							"dataSourceTypeHint": "picture",
+							"width": 30,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"pictureFormat": "proportionalCenter",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 10,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_bibio_icon",
+								"fontFamily": "Police système",
+								"fontSize": 10
+							},
+							"footer": {
+								"name": "Pied1",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 10
+							}
+						},
+						{
+							"name": "Col_lb_bibio_Nom",
+							"dataSource": "This:C1470.Nom+This:C1470.ExtensionFichier",
+							"width": 240,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 10,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_bibio_Nom",
+								"text": "Nom",
+								"fontFamily": "Police système",
+								"fontSize": 10
+							},
+							"footer": {
+								"name": "Pied2",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 10
+							}
+						},
+						{
+							"name": "Col_lb_bibio_Vignette",
+							"dataSource": "Y_vignettePetite ",
+							"dataSourceTypeHint": "picture",
+							"width": 45,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"pictureFormat": "proportionalCenter",
+							"visibility": "hidden",
+							"truncateMode": "none",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 10,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_bibio_Vignette",
+								"text": "Img.",
+								"fontFamily": "Police système",
+								"fontSize": 10
+							},
+							"footer": {
+								"name": "Pied3",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 10
+							}
+						}
+					]
+				},
+				"Btn_MotsCles": {
+					"type": "checkbox",
+					"top": 41,
+					"left": 230,
+					"width": 83,
+					"height": 16,
+					"text": "Mots-clés",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_MotsCles.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"lb_ListeMotsCles": {
+					"type": "listbox",
+					"top": 60,
+					"left": 10,
+					"width": 435,
+					"height": 200,
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"hideFocusRing": true,
+					"movableRows": false,
+					"rowHeight": "18px",
+					"headerHeight": "25px",
+					"dataSource": "Form:C1466.MotsCles",
+					"currentItemSource": "Form:C1466.elmtCourantMotsCles",
+					"currentItemPositionSource": "Form:C1466.posCourantMotsCles",
+					"selectedItemsSource": "Form:C1466.SelectionMotsCles",
+					"scrollbarHorizontal": "automatic",
+					"fontFamily": "Police système",
+					"fontSize": 9,
+					"method": "ObjectMethods/lb_ListeMotsCles.4dm",
+					"events": [
+						"onClick"
+					],
+					"columns": [
+						{
+							"name": "Col_lb_ListeMotsCles_Libelle",
+							"dataSource": "This:C1470.Libelle",
+							"width": 195,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"truncateMode": "none",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 9,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_Libelle",
+								"text": "Mot clé",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							},
+							"footer": {
+								"name": "Pied7",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_Categorie",
+							"dataSource": "This:C1470.Categorie",
+							"dataSourceTypeHint": "boolean",
+							"width": 25,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"pictureFormat": "proportionalCenter",
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 9,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_Categorie",
+								"text": "Cat.",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							},
+							"footer": {
+								"name": "Pied8",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_Createur",
+							"dataSource": "This:C1470.Createur",
+							"dataSourceTypeHint": "boolean",
+							"width": 25,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"pictureFormat": "proportionalCenter",
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 9,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_Createur",
+								"text": "Créa",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							},
+							"footer": {
+								"name": "Pied6",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_ProfCreateur",
+							"dataSource": "This:C1470.Prof_Createur",
+							"dataSourceTypeHint": "boolean",
+							"width": 25,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"pictureFormat": "proportionalCenter",
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 9,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_ProfCreateur",
+								"text": "Prof\\créa",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							},
+							"footer": {
+								"name": "Pied9",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_Description",
+							"dataSource": "This:C1470.Legende_Description",
+							"dataSourceTypeHint": "boolean",
+							"width": 25,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"pictureFormat": "proportionalCenter",
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 9,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_Description",
+								"text": "Lég\\des",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							},
+							"footer": {
+								"name": "Pied10",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_Mention",
+							"dataSource": "This:C1470.Mention_Copy",
+							"dataSourceTypeHint": "boolean",
+							"width": 25,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"pictureFormat": "proportionalCenter",
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 9,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_Mention",
+								"text": "Men\\©",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							},
+							"footer": {
+								"name": "Pied11",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_Fournisseur",
+							"dataSource": "This:C1470.Fournisseur",
+							"dataSourceTypeHint": "boolean",
+							"width": 25,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"pictureFormat": "proportionalCenter",
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 9,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_Fournisseur",
+								"text": "Four",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							},
+							"footer": {
+								"name": "Pied12",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_Titre",
+							"dataSource": "This:C1470.Titre",
+							"dataSourceTypeHint": "boolean",
+							"width": 25,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"pictureFormat": "proportionalCenter",
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 9,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_Titre",
+								"text": "Titre",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							},
+							"footer": {
+								"name": "Pied13",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_Ville",
+							"dataSource": "This:C1470.Ville",
+							"dataSourceTypeHint": "boolean",
+							"width": 25,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"pictureFormat": "proportionalCenter",
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 9,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_Ville",
+								"text": "Ville",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							},
+							"footer": {
+								"name": "Pied15",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_PaysRegion",
+							"dataSource": "This:C1470.Pays_Region",
+							"dataSourceTypeHint": "boolean",
+							"width": 25,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"pictureFormat": "proportionalCenter",
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 9,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_PaysRegion",
+								"text": "Pays\\rég.",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							},
+							"footer": {
+								"name": "Pied14",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 9
+							}
+						}
+					]
+				},
+				"lb_Liste_Image": {
+					"type": "listbox",
+					"top": 60,
+					"left": 304,
+					"width": 936,
+					"height": 451,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"hideFocusRing": true,
+					"sortable": false,
+					"movableRows": false,
+					"rowHeight": "150px",
+					"showHeaders": false,
+					"staticColumnCount": 2,
+					"selectionMode": "none",
+					"scrollbarHorizontal": "hidden",
+					"method": "ObjectMethods/lb_Liste_Image.4dm",
+					"events": [
+						"onClick"
+					],
+					"columns": [
+						{
+							"name": "Col_lb_ListeImage_1",
+							"dataSourceTypeHint": "picture",
+							"width": 300,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"pictureFormat": "proportionalCenter",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeImage_1",
+								"text": "Image"
+							},
+							"footer": {
+								"name": "Pied4",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_ListeImage_Info_1",
+							"dataSourceTypeHint": "object",
+							"width": 621,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"visibility": "hidden",
+							"truncateMode": "none",
+							"events": [
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeImage_Info_1",
+								"text": "Info image"
+							},
+							"footer": {
+								"name": "Pied5",
+								"timeFormat": "hh_mm_ss"
+							}
+						}
+					]
+				},
+				"thermoLargeurCol": {
+					"type": "ruler",
+					"top": 524,
+					"left": 304,
+					"width": 150,
+					"height": 12,
+					"sizingY": "move",
+					"showGraduations": true,
+					"max": 100,
+					"graduationStep": 10,
+					"class": "default",
+					"method": "ObjectMethods/thermoLargeurCol.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Btn_Fermer": {
+					"type": "button",
+					"top": 520,
+					"left": 1150,
+					"width": 90,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"action": "accept",
+					"shortcutKey": "[Esc]",
+					"text": "Fermer",
+					"fontFamily": "Police système",
+					"fontSize": 11,
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Fermer.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Image1": {
+					"type": "picture",
+					"top": 18,
+					"left": 280,
+					"width": 18,
+					"height": 18,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/images/previous.png"
+				},
+				"Btn_Retour": {
+					"type": "button",
+					"top": 18,
+					"left": 280,
+					"width": 18,
+					"height": 18,
+					"display": false,
+					"method": "ObjectMethods/Btn_Retour.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"nbFiches": {
+					"type": "input",
+					"top": 47,
+					"left": 1210,
+					"width": 30,
+					"height": 12,
+					"sizingX": "move",
+					"dataSourceTypeHint": "number",
+					"fontFamily": "Police système",
+					"fontSize": 9,
+					"fontStyle": "italic",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": {
+						"$ref": "/SOURCES/filters.json#/Decimale1AvecouSans"
+					},
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Image2": {
+					"type": "picture",
+					"top": 18,
+					"left": 260,
+					"width": 18,
+					"height": 18,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/images/home.png"
+				},
+				"Btn_Home": {
+					"type": "button",
+					"top": 18,
+					"left": 260,
+					"width": 18,
+					"height": 18,
+					"display": false,
+					"method": "ObjectMethods/Btn_Home.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Image3": {
+					"type": "picture",
+					"top": 38,
+					"left": 20,
+					"width": 18,
+					"height": 18,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/images/search.png"
+				},
+				"Texte": {
+					"type": "text",
+					"top": 21,
+					"left": 10,
+					"width": 30,
+					"height": 13,
+					"textAlign": "right",
+					"fontFamily": "Police système",
+					"fontSize": 10,
+					"text": "Client"
+				},
+				"vClient": {
+					"type": "input",
+					"top": 20,
+					"left": 45,
+					"width": 170,
+					"height": 13,
+					"fontFamily": "Police système",
+					"fontSize": 10,
+					"focusable": false,
+					"enterable": false,
+					"placeholder": "Client ?",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"Image4": {
+					"type": "picture",
+					"top": 18,
+					"left": 215,
+					"width": 18,
+					"height": 18,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/images/options.png"
+				},
+				"Btn_PopMenuClient": {
+					"type": "button",
+					"top": 18,
+					"left": 215,
+					"width": 18,
+					"height": 18,
+					"display": false,
+					"method": "ObjectMethods/Btn_PopMenuClient.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"vUUID_Client": {
+					"type": "input",
+					"top": 20,
+					"left": 144,
+					"width": 70,
+					"height": 13,
+					"visibility": "hidden",
+					"stroke": "#FF0000",
+					"fontFamily": "Police système",
+					"fontSize": 10,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"placeholder": "Client ?",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"cc_Tri1": {
+					"type": "radio",
+					"top": 41,
+					"left": 353,
+					"width": 110,
+					"height": 15,
+					"text": "Alpha. croissant",
+					"focusable": false,
+					"radioGroup": "Groupe8",
+					"method": "ObjectMethods/cc_Tri1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"cc_Tri2": {
+					"type": "radio",
+					"top": 41,
+					"left": 473,
+					"width": 120,
+					"height": 15,
+					"text": "Alpha. décroissant",
+					"focusable": false,
+					"radioGroup": "Groupe8",
+					"method": "ObjectMethods/cc_Tri2.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"cc_Tri3": {
+					"type": "radio",
+					"top": 41,
+					"left": 606,
+					"width": 110,
+					"height": 15,
+					"text": "Date croissante",
+					"focusable": false,
+					"radioGroup": "Groupe8",
+					"method": "ObjectMethods/cc_Tri3.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"cc_Tri4": {
+					"type": "radio",
+					"top": 41,
+					"left": 724,
+					"width": 120,
+					"height": 15,
+					"text": "Date décroissante",
+					"focusable": false,
+					"radioGroup": "Groupe8",
+					"method": "ObjectMethods/cc_Tri4.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 42,
+					"left": 311,
+					"width": 30,
+					"height": 13,
+					"textAlign": "right",
+					"fontFamily": "Police système",
+					"fontSize": 10,
+					"text": "Tri :"
+				},
+				"Btn_Affichage_Nom": {
+					"type": "checkbox",
+					"top": 41,
+					"left": 864,
+					"width": 113,
+					"height": 16,
+					"text": "Afficher le nom",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Affichage_Nom.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Btn_Affichage_Date": {
+					"type": "checkbox",
+					"top": 41,
+					"left": 977,
+					"width": 113,
+					"height": 16,
+					"text": "avec date créa.",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Affichage_Date.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Btn_Affichage_Taille": {
+					"type": "checkbox",
+					"top": 41,
+					"left": 1089,
+					"width": 93,
+					"height": 16,
+					"text": "avec la taille",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Affichage_Taille.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			},
+			"entryOrder": [
+				"Chemin_courant",
+				"chercherChaine",
+				"lb_bibiothequeDossier",
+				"Btn_MotsCles",
+				"lb_ListeMotsCles",
+				"lb_Liste_Image",
+				"thermoLargeurCol",
+				"Btn_Fermer",
+				"Groupe8",
+				"cc_Tri1",
+				"cc_Tri2",
+				"cc_Tri3",
+				"cc_Tri4",
+				"Btn_Affichage_Nom",
+				"Btn_Affichage_Date",
+				"Btn_Affichage_Taille"
+			]
+		}
+	],
+	"editor": {
+		"groups": {
+			"Groupe5": [
+				"Image1",
+				"Btn_Retour"
+			],
+			"Groupe3": [
+				"Image2",
+				"Btn_Home"
+			],
+			"Groupe6": [
+				"Image4",
+				"Btn_PopMenuClient"
+			],
+			"Groupe8": [
+				"cc_Tri1",
+				"cc_Tri2",
+				"cc_Tri3",
+				"cc_Tri4"
+			]
+		}
+	}
+}

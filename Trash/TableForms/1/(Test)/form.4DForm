@@ -1,0 +1,195 @@
+﻿{
+	"destination": "detailScreen",
+	"windowMinWidth": 815,
+	"windowMinHeight": 555,
+	"rightMargin": 15,
+	"bottomMargin": 15,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onTimer",
+		"onResize"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Btn_Fermer": {
+					"type": "button",
+					"top": 520,
+					"left": 730,
+					"width": 70,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"action": "accept",
+					"text": "Fermer",
+					"fontFamily": "Police système",
+					"fontSize": 11,
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"lb_bibiothequeDossier": {
+					"type": "listbox",
+					"top": 60,
+					"left": 10,
+					"width": 285,
+					"height": 480,
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"hideFocusRing": true,
+					"movableRows": false,
+					"rowHeight": "25px",
+					"headerHeight": "17px",
+					"staticColumnCount": 4,
+					"dataSource": "Form:C1466.docs",
+					"currentItemSource": "Form:C1466.elmtCourantDoc",
+					"currentItemPositionSource": "Form:C1466.posCourantDoc",
+					"selectedItemsSource": "Form:C1466.SelectionDoc",
+					"scrollbarHorizontal": "automatic",
+					"fontFamily": "Police système",
+					"fontSize": 10,
+					"method": "ObjectMethods/lb_bibiothequeDossier.4dm",
+					"events": [
+						"onClick",
+						"onDoubleClick"
+					],
+					"columns": [
+						{
+							"name": "Col_lb_bibio_iconDosEnfant",
+							"dataSource": "y_iconOuvertureDossier ",
+							"dataSourceTypeHint": "picture",
+							"width": 25,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"pictureFormat": "truncatedCenter",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 10,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_bibio_icon1",
+								"fontFamily": "Police système",
+								"fontSize": 10
+							},
+							"footer": {
+								"name": "Pied4",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 10
+							}
+						},
+						{
+							"name": "Col_lb_bibio_icon",
+							"dataSource": "y_iconDossier ",
+							"dataSourceTypeHint": "picture",
+							"width": 35,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"pictureFormat": "proportionalCenter",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 10,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_bibio_icon",
+								"fontFamily": "Police système",
+								"fontSize": 10
+							},
+							"footer": {
+								"name": "Pied1",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 10
+							}
+						},
+						{
+							"name": "Col_lb_bibio_Nom",
+							"dataSource": "This:C1470.Nom+This:C1470.ExtensionFichier",
+							"width": 240,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 10,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_bibio_Nom",
+								"text": "Nom",
+								"fontFamily": "Police système",
+								"fontSize": 10
+							},
+							"footer": {
+								"name": "Pied2",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 10
+							}
+						},
+						{
+							"name": "Col_lb_bibio_Vignette",
+							"dataSource": "Y_vignettePetite ",
+							"dataSourceTypeHint": "picture",
+							"width": 45,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"pictureFormat": "proportionalCenter",
+							"visibility": "hidden",
+							"truncateMode": "none",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 10,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_bibio_Vignette",
+								"text": "Img.",
+								"fontFamily": "Police système",
+								"fontSize": 10
+							},
+							"footer": {
+								"name": "Pied3",
+								"timeFormat": "hh_mm_ss",
+								"fontFamily": "Police système",
+								"fontSize": 10
+							}
+						}
+					]
+				}
+			}
+		}
+	]
+}

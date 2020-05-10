@@ -1,0 +1,256 @@
+﻿{
+	"destination": "detailScreen",
+	"windowTitle": "Préférences",
+	"windowSizingX": "fixed",
+	"windowMinHeight": 455,
+	"windowMaxHeight": 32000,
+	"rightMargin": 15,
+	"bottomMargin": 15,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"labelVersion": {
+					"type": "text",
+					"top": 50,
+					"left": 13,
+					"width": 167,
+					"height": 14,
+					"stroke": "#212121",
+					"textAlign": "right",
+					"fontTheme": "additional",
+					"text": "Chemin dossiers clients"
+				},
+				"txtInfo1": {
+					"type": "input",
+					"top": 50,
+					"left": 190,
+					"width": 384,
+					"height": 49,
+					"dataSource": "Form:C1466.Chemin_Dossier_Client",
+					"stroke": "#696969",
+					"focusable": false,
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"Btn_Valider": {
+					"type": "button",
+					"top": 420,
+					"left": 600,
+					"width": 90,
+					"height": 20,
+					"sizingY": "move",
+					"action": "accept",
+					"text": "Valider",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Btn_Annuler": {
+					"type": "button",
+					"top": 420,
+					"left": 495,
+					"width": 90,
+					"height": 20,
+					"sizingY": "move",
+					"action": "cancel",
+					"text": "Annuler",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Btn_Dossier_Client": {
+					"type": "button",
+					"top": 47,
+					"left": 585,
+					"width": 105,
+					"height": 20,
+					"text": "Select. Dossier",
+					"fontFamily": "Police système",
+					"fontSize": 11,
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Dossier_Client.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"labelVersion1": {
+					"type": "text",
+					"top": 123,
+					"left": 13,
+					"width": 167,
+					"height": 41,
+					"stroke": "#212121",
+					"textAlign": "right",
+					"fontTheme": "additional",
+					"text": "Liste des extensions de fichier"
+				},
+				"lb_extension": {
+					"type": "listbox",
+					"top": 123,
+					"left": 190,
+					"width": 290,
+					"height": 281,
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "currentSelection",
+					"hideFocusRing": true,
+					"movableRows": false,
+					"rowHeight": "50px",
+					"headerHeight": "2em",
+					"staticColumnCount": 4,
+					"highlightSet": "$ListboxSet",
+					"table": 4,
+					"selectionMode": "single",
+					"scrollbarHorizontal": "automatic",
+					"columns": [
+						{
+							"name": "Col_lb_extension_Nom",
+							"dataSource": "[Extension:4]Nom:2",
+							"width": 100,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_extension_Nom",
+								"text": "ext."
+							},
+							"footer": {
+								"name": "Pied1",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_extension_icon",
+							"dataSource": "[Extension:4]icon:3",
+							"dataSourceTypeHint": "picture",
+							"width": 55,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"pictureFormat": "proportionalCenter",
+							"events": [
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_extension_icon",
+								"text": "icon"
+							},
+							"footer": {
+								"name": "Pied2",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_extension_imgLisible",
+							"dataSource": "[Extension:4]Lisibe_4D:4",
+							"dataSourceTypeHint": "boolean",
+							"width": 60,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"controlType": "checkbox",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_extension_CreerImage",
+								"text": "Creer\\Image"
+							},
+							"footer": {
+								"name": "Pied3",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_extension_imgLisible1",
+							"dataSource": "[Extension:4]NePasAnalyser:5",
+							"dataSourceTypeHint": "boolean",
+							"width": 60,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"controlType": "checkbox",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_extension_NePasAnalyser",
+								"text": "Ne pas\\analyser"
+							},
+							"footer": {
+								"name": "Pied4",
+								"timeFormat": "hh_mm_ss"
+							}
+						}
+					]
+				},
+				"Titre1": {
+					"type": "text",
+					"top": 15,
+					"left": 15,
+					"width": 150,
+					"height": 17,
+					"stroke": "#212121",
+					"fontTheme": "main",
+					"text": "Préférences"
+				},
+				"Ligne": {
+					"type": "line",
+					"top": 33,
+					"left": 15,
+					"width": 675,
+					"stroke": "#800080"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {
+				"objects": [
+					"labelVersion"
+				]
+			},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

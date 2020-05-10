@@ -1,0 +1,187 @@
+﻿{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"rightMargin": 15,
+	"bottomMargin": 15,
+	"menuBar": "Barre #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"lib2": {
+					"type": "text",
+					"top": 80,
+					"left": 13,
+					"width": 167,
+					"height": 14,
+					"stroke": "#212121",
+					"textAlign": "right",
+					"fontTheme": "additional",
+					"text": "Type"
+				},
+				"Lib1": {
+					"type": "text",
+					"top": 50,
+					"left": 13,
+					"width": 167,
+					"height": 14,
+					"stroke": "#212121",
+					"textAlign": "right",
+					"fontTheme": "additional",
+					"text": "Nom"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 50,
+					"left": 190,
+					"width": 384,
+					"height": 15,
+					"dataSource": "[Groupe:8]Nom:2",
+					"stroke": "#696969",
+					"fontFamily": "Police système",
+					"fontSize": 11,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Btn_Valider": {
+					"type": "button",
+					"top": 175,
+					"left": 600,
+					"width": 90,
+					"height": 20,
+					"text": "Valider",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Valider.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Btn_Annuler": {
+					"type": "button",
+					"top": 175,
+					"left": 495,
+					"width": 90,
+					"height": 20,
+					"action": "cancel",
+					"text": "Annuler",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Titre1": {
+					"type": "text",
+					"top": 15,
+					"left": 15,
+					"width": 150,
+					"height": 17,
+					"stroke": "#212121",
+					"fontTheme": "main",
+					"text": "Groupe"
+				},
+				"Ligne": {
+					"type": "line",
+					"top": 33,
+					"left": 15,
+					"width": 675,
+					"stroke": "#800080"
+				},
+				"cc1": {
+					"type": "radio",
+					"top": 79,
+					"left": 190,
+					"width": 60,
+					"height": 17,
+					"text": "Client",
+					"fontFamily": "Police système",
+					"fontSize": 11,
+					"stroke": "#696969",
+					"focusable": false,
+					"radioGroup": "Groupe1",
+					"method": "ObjectMethods/cc1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"cc2": {
+					"type": "radio",
+					"top": 79,
+					"left": 255,
+					"width": 130,
+					"height": 17,
+					"text": "Eléments personnel",
+					"fontFamily": "Police système",
+					"fontSize": 11,
+					"stroke": "#696969",
+					"focusable": false,
+					"radioGroup": "Groupe1",
+					"method": "ObjectMethods/cc2.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"cc3": {
+					"type": "radio",
+					"top": 79,
+					"left": 393,
+					"width": 140,
+					"height": 17,
+					"text": "Photothèque externe",
+					"fontFamily": "Police système",
+					"fontSize": 11,
+					"stroke": "#696969",
+					"focusable": false,
+					"radioGroup": "Groupe1",
+					"method": "ObjectMethods/cc3.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		}
+	],
+	"editor": {
+		"groups": {
+			"Groupe1": [
+				"cc1",
+				"cc2",
+				"cc3"
+			]
+		},
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {
+				"objects": [
+					"lib2"
+				]
+			},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

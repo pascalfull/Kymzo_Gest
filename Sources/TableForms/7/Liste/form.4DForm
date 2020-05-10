@@ -1,0 +1,215 @@
+﻿{
+	"destination": "detailScreen",
+	"windowTitle": "Liste des Clients",
+	"windowSizingX": "fixed",
+	"windowMinHeight": 400,
+	"rightMargin": 15,
+	"bottomMargin": 15,
+	"menuBar": "Barre #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Btn_Fermer": {
+					"type": "button",
+					"top": 365,
+					"left": 800,
+					"width": 90,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Fermer",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Titre1": {
+					"type": "text",
+					"top": 15,
+					"left": 15,
+					"width": 150,
+					"height": 17,
+					"stroke": "#212121",
+					"fontTheme": "main",
+					"text": "Liste des Clients"
+				},
+				"Ligne": {
+					"type": "line",
+					"top": 33,
+					"left": 15,
+					"width": 875,
+					"sizingX": "grow",
+					"stroke": "#800080"
+				},
+				"lb_ListeClients": {
+					"type": "listbox",
+					"top": 50,
+					"left": 15,
+					"width": 875,
+					"height": 303,
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "currentSelection",
+					"hideFocusRing": true,
+					"movableRows": false,
+					"rowHeight": "2em",
+					"staticColumnCount": 4,
+					"highlightSet": "$ListboxSet_ListeClients",
+					"table": 7,
+					"selectionMode": "single",
+					"scrollbarHorizontal": "automatic",
+					"method": "ObjectMethods/lb_ListeClients.4dm",
+					"events": [
+						"onDisplayDetail",
+						"onDoubleClick",
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "Col_lb_ListeClients_Nom1",
+							"dataSource": "[Groupe:8]Nom:2",
+							"width": 200,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"wordwrap": "normal",
+							"truncateMode": "none",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeClients_Groupe",
+								"text": "Groupe"
+							},
+							"footer": {
+								"name": "Pied4",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_ListeClients_Nom",
+							"dataSource": "[Client:7]Nom:2",
+							"width": 200,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"wordwrap": "normal",
+							"truncateMode": "none",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeClients_Nom",
+								"text": "Nom"
+							},
+							"footer": {
+								"name": "Pied1",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_ListeClients_Dossier",
+							"dataSource": "[Client:7]Chemin_Dossier:3",
+							"width": 420,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"wordwrap": "normal",
+							"truncateMode": "none",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 11,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeClients_Dossier",
+								"text": "Dossier Travaux"
+							},
+							"footer": {
+								"name": "Pied2",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_ListeClients_Actualiser",
+							"dataSource": "[Client:7]Actualiser_Dossier:4",
+							"dataSourceTypeHint": "boolean",
+							"width": 40,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeClients_Actualiser",
+								"text": "Actu."
+							},
+							"footer": {
+								"name": "Pied3",
+								"timeFormat": "hh_mm_ss"
+							}
+						}
+					]
+				},
+				"Btn_Ajouter": {
+					"type": "button",
+					"top": 365,
+					"left": 580,
+					"width": 90,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"text": "Ajouter",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Ajouter.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Btn_Supprimer": {
+					"type": "button",
+					"top": 365,
+					"left": 690,
+					"width": 90,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"text": "Supprimer",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Supprimer.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		}
+	]
+}

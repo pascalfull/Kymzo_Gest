@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="" uuid="C22FC35CC6404942B4A9D38AD724DFF5" collation_locale="fr">
+	<schema name="DEFAULT_SCHEMA"/>
+	<table name="Bibliotheque" uuid="E1B46B50C70044C9B6C49964A2B8009B" id="1">
+		<field name="UUID" uuid="E1F31A49D646400585996DA2F52E1649" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="Type" uuid="D7319E866D8F40BFAF6019D40D4DA309" type="3" never_null="true" id="2">
+			<field_extra>
+				<comment format="rtf">{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0\f0\fs22 \cf2 \ulnone 0 = Base Client\1 = Bibliotheque de Fontes\2 = Stock visuels}				</comment>
+				<comment format="text">0 = Base Client1 = Bibliotheque de Fontes2 = Stock visuels				</comment>
+			</field_extra>
+		</field>
+		<field name="Nom" uuid="0EB5E59E299141D7B41E1ACFF94B4B29" type="10" limiting_length="255" never_null="true" id="3"/>
+		<field name="DateCreation" uuid="1E4590C08C434954A919E75EEC6707AA" type="8" never_null="true" id="4"/>
+		<field name="HeureCreation" uuid="927489825F3F4B14ABEC210C83DB8A96" type="9" never_null="true" id="5"/>
+		<field name="DateModification" uuid="88D7E9F196C44880A3823B800F443235" type="8" never_null="true" id="6"/>
+		<field name="HeureModification" uuid="96EC63805F0F4389A90A3BD0A385EF23" type="9" never_null="true" id="7"/>
+		<field name="Path_" uuid="B9341B670211447CB2309FF28A9BCA52" type="10" never_null="true" id="8">
+			<field_extra multi_line="true">
+				<editor_field_info>
+					<color red="255" green="255" blue="255" alpha="0"/>
+				</editor_field_info>
+			</field_extra>
+		</field>
+		<field name="PathParent" uuid="D937B39DA0DA4D82A9C9E78DFFC62CF8" type="10" never_null="true" id="9"/>
+		<field name="ExtensionFichier" uuid="46B3484BE6BD41CC9FCE75AA26E865A3" type="10" limiting_length="10" never_null="true" id="10"/>
+		<field name="PoidsFichier" uuid="4B8A631AB80B4B15B1ED648699A648C9" type="4" never_null="true" id="11"/>
+		<field name="DossierFichier" uuid="37BA1860451444059B1870284290BBDB" type="1" never_null="true" id="12">
+			<field_extra>
+				<comment format="rtf">{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf840{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0\f0\fs22 \cf2 \ulnone Dossier = Vrai\Fichier = Faux}				</comment>
+				<comment format="text">Dossier = VraiFichier = Faux				</comment>
+			</field_extra>
+		</field>
+		<field name="ATraiter" uuid="3CF6900BB30E456AA38895C02919F670" type="1" never_null="true" id="13"/>
+		<field name="icon" uuid="8677A6C9D9394930B76FD9283A74B9AA" type="12" never_null="true" id="14"/>
+		<field name="Largeur_Image" uuid="452F5FCFB2BB4D79B4C5D76F5A74F0EB" type="4" never_null="true" id="15"/>
+		<field name="Hauteur_Image" uuid="8C30921974F1413F935C6DAD006AB248" type="4" never_null="true" id="16"/>
+		<field name="UUID_Client" uuid="D9BBE7F66A9B46D5903499C0E17B109B" type="10" store_as_UUID="true" never_null="true" id="17"/>
+		<primary_key field_name="UUID" field_uuid="E1F31A49D646400585996DA2F52E1649"/>
+		<table_extra input_form="VisuBiblio" output_form="">
+			<editor_table_info displayable_fields_count="17">
+				<color red="252" green="191" blue="73" alpha="255"/>
+				<coordinates left="282.4609375" top="22" width="149" height="398.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Vignette" uuid="1D6B33D9EB8F4DBB98C714FBB4021261" id="2">
+		<field name="UUID" uuid="DB0C6B2DD3D14FA6AF0A8DABA9B7DDB0" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="UUID_Bibliotheque" uuid="3E20C06E756E4C98A75433351748ABDB" type="10" store_as_UUID="true" never_null="true" id="2"/>
+		<field name="Vignette_1" uuid="996BF72339DE464498AE663637A73446" type="12" never_null="true" id="3"/>
+		<field name="Vignette_2" uuid="ABE4C2C46D6B47CF9E64C740E8358DB6" type="12" never_null="true" id="4" outside_blob="true"/>
+		<field name="Vignette_3" uuid="74B552F5EEC84574B96C909F9B5BB395" type="12" never_null="true" id="5" outside_blob="true"/>
+		<primary_key field_name="UUID" field_uuid="DB0C6B2DD3D14FA6AF0A8DABA9B7DDB0"/>
+		<table_extra input_form="" output_form="">
+			<editor_table_info displayable_fields_count="5">
+				<color red="252" green="191" blue="73" alpha="255"/>
+				<coordinates left="570" top="22" width="154" height="146.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Preference" uuid="A244661DA02E494E8EEC7FAF89B09F00" id="3">
+		<field name="UUID" uuid="BD688480ACA8426584F34ACABA9F4D7D" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="Chemin_Dossier_Client" uuid="CFBE2E6503374B5F87359D90E693DCE0" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="UUID_DernierClientConsulter" uuid="A332960C954E4641AE028338CB00605A" type="10" store_as_UUID="true" never_null="true" id="3"/>
+		<field name="Reglages" uuid="7935DCE29C7545FEBAEA6894538C94EA" type="21" blob_switch_size="2147483647" never_null="true" id="4"/>
+		<field name="UUID_DernierGroupeConsulter" uuid="4067681F6EAF4FFAA40425C7A0CA5F42" type="10" store_as_UUID="true" never_null="true" id="5"/>
+		<primary_key field_name="UUID" field_uuid="BD688480ACA8426584F34ACABA9F4D7D"/>
+		<table_extra input_form="Saisie" output_form="">
+			<editor_table_info displayable_fields_count="5">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="0" top="22" width="215" height="146.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Extension" uuid="48809BB187B3443890B708EDF4590828" id="4">
+		<field name="UUID" uuid="8DD3FFEF583248509AD006436ED9EA9F" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="Nom" uuid="A5478EB41ADD4F6A8975BABCA48FB425" type="10" limiting_length="10" never_null="true" id="2"/>
+		<field name="icon" uuid="00F2F9D5F3214F80BBF1E94503073B3B" type="12" never_null="true" id="3"/>
+		<field name="Lisibe_4D" uuid="6F4B7B9B7B854F2BAFA21E8675E51814" type="1" never_null="true" id="4"/>
+		<field name="NePasAnalyser" uuid="EDDD19EFD4934615B5851069B6F8E66E" type="1" never_null="true" id="5"/>
+		<primary_key field_name="UUID" field_uuid="8DD3FFEF583248509AD006436ED9EA9F"/>
+		<table_extra input_form="" output_form="">
+			<editor_table_info displayable_fields_count="5">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="0" top="201.33203125" width="136" height="146.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Mot_Clef" uuid="67CAC749A29E43BD9A5BA01C6DC3C5A8" id="5">
+		<field name="UUID" uuid="75D581C1700641AFA4110EA101177F9A" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="Categorie" uuid="1B0A3FDF77054E2F9DF963AA61547A0F" type="1" never_null="true" id="2"/>
+		<field name="Libelle" uuid="ECBFB73ACE1A49E68B40A81D5404CDEC" type="10" limiting_length="255" never_null="true" id="3">
+			<field_extra multi_line="false">
+				<editor_field_info>
+					<color red="255" green="255" blue="255" alpha="0"/>
+				</editor_field_info>
+			</field_extra>
+		</field>
+		<field name="Createur" uuid="D1F21DFB19BF407AA87F322E789A1059" type="1" never_null="true" id="4"/>
+		<field name="Prof_Createur" uuid="2AB7CE97D4E743248CF016D0B7C1671B" type="1" never_null="true" id="5"/>
+		<field name="Legende_Description" uuid="7DA6F741C4074A0683552E6DBB1C85CA" type="1" never_null="true" id="6"/>
+		<field name="Mention_Copy" uuid="2BC57DB164894B71B6F41597B83C1577" type="1" never_null="true" id="7"/>
+		<field name="Fournisseur" uuid="214887F9586640B983B086F420A25DE8" type="1" never_null="true" id="8"/>
+		<field name="Titre" uuid="06690E7A911D47C0A050F280FE23BEE0" type="1" never_null="true" id="9"/>
+		<field name="Pays_Region" uuid="66EC2F3904D445468ACC031821697D7B" type="1" never_null="true" id="10"/>
+		<field name="Ville" uuid="6B97596FB7954BD0ADDC11D61BAE7F5C" type="1" never_null="true" id="11"/>
+		<primary_key field_name="UUID" field_uuid="75D581C1700641AFA4110EA101177F9A"/>
+		<table_extra input_form="" output_form="">
+			<editor_table_info displayable_fields_count="11">
+				<color red="249" green="130" blue="127" alpha="255"/>
+				<coordinates left="570" top="355.55078125" width="165" height="272.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Biblio_MotClef" uuid="C0860C1C2A2F42398B995C177A8EF7F8" id="6">
+		<field name="UUID" uuid="DC52BED943BE4E869D7CC9F000F5FE93" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="UUID_Bibliotheque" uuid="B1AFA3BC198D4309ABBA970ECAECAF60" type="10" store_as_UUID="true" never_null="true" id="2"/>
+		<field name="UUID_MotClef" uuid="A7D9FA1CCBAB4B4188D8C49201C8A826" type="10" store_as_UUID="true" never_null="true" id="3"/>
+		<primary_key field_name="UUID" field_uuid="DC52BED943BE4E869D7CC9F000F5FE93"/>
+		<table_extra input_form="" output_form="">
+			<editor_table_info displayable_fields_count="3">
+				<color red="249" green="130" blue="127" alpha="255"/>
+				<coordinates left="570" top="201.52734375" width="160" height="104.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Client" uuid="3E389B1B49D74D9889F0FDB449FABE7C" id="7">
+		<field name="UUID" uuid="2077CD2EB64E4648BC70C83AEE76E329" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="Nom" uuid="84D7D82D508249168BC5B4EF6392C451" type="10" limiting_length="80" never_null="true" id="2"/>
+		<field name="Chemin_Dossier" uuid="CBADD4C2D3C541C689B3115C30186D2E" type="10" never_null="true" id="3"/>
+		<field name="Actualiser_Dossier" uuid="6787B586C2AA4179A04725E5D0D285B6" type="1" never_null="true" id="4"/>
+		<field name="UUID_Groupe" uuid="483EC7D339C64E2C8751BFB52C153912" type="10" store_as_UUID="true" never_null="true" id="5"/>
+		<primary_key field_name="UUID" field_uuid="2077CD2EB64E4648BC70C83AEE76E329"/>
+		<table_extra input_form="Saisie" output_form="">
+			<editor_table_info displayable_fields_count="5">
+				<color red="168" green="206" blue="226" alpha="255"/>
+				<coordinates left="0" top="369.8828125" width="152" height="146.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Groupe" uuid="3985FF18D8404EEDA0AC0DA5FB44AE25" id="8">
+		<field name="UUID" uuid="0434D219775348DBB07C4A835497FE73" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="Nom" uuid="6FD4E9402A494374B7B1101A7DF0C92B" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="Type" uuid="0007633E9F384D5FB34D0F1989D119C9" type="3" never_null="true" id="3">
+			<field_extra>
+				<comment format="rtf"><![CDATA[{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red29\green29\blue29;}
+{\*\expandedcolortbl;;\cssrgb\c14902\c14902\c14902;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
+
+\f0\fs22 \cf2 \ulnone 0 = Client\
+1 = El\'e9ments Perso\
+2 = Phototh\'e8que externe}				]]>				</comment>
+				<comment format="text">0 = Client1 = Eléments Perso2 = Photothèque externe				</comment>
+			</field_extra>
+		</field>
+		<primary_key field_name="UUID" field_uuid="0434D219775348DBB07C4A835497FE73"/>
+		<table_extra input_form="" output_form="">
+			<editor_table_info displayable_fields_count="3">
+				<color red="168" green="206" blue="226" alpha="255"/>
+				<coordinates left="0" top="545.12109375" width="85" height="104.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<relation uuid="A654611F35E94510ABD74E214A6C2F16" name_Nto1="vignettes" name_1toN="retourVignette" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="3E20C06E756E4C98A75433351748ABDB" name="UUID_Bibliotheque">
+				<table_ref uuid="1D6B33D9EB8F4DBB98C714FBB4021261" name="Vignette"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="E1F31A49D646400585996DA2F52E1649" name="UUID">
+				<table_ref uuid="E1B46B50C70044C9B6C49964A2B8009B" name="Bibliotheque"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="252" green="191" blue="73" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="E6AC58C11FE14F64BF0257AE64A6AD9D" name_Nto1="extension" name_1toN="bibliotheque" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="46B3484BE6BD41CC9FCE75AA26E865A3" name="ExtensionFichier">
+				<table_ref uuid="E1B46B50C70044C9B6C49964A2B8009B" name="Bibliotheque"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="A5478EB41ADD4F6A8975BABCA48FB425" name="Nom">
+				<table_ref uuid="48809BB187B3443890B708EDF4590828" name="Extension"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="252" green="191" blue="73" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="09581180B8474938B6C07A988C542A18" name_Nto1="Lien_motclef" name_1toN="Retour_motclef" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="A7D9FA1CCBAB4B4188D8C49201C8A826" name="UUID_MotClef">
+				<table_ref uuid="C0860C1C2A2F42398B995C177A8EF7F8" name="Biblio_MotClef"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="75D581C1700641AFA4110EA101177F9A" name="UUID">
+				<table_ref uuid="67CAC749A29E43BD9A5BA01C6DC3C5A8" name="Mot_Clef"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="249" green="130" blue="127" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="9C94406AD82E43AC94E2525B23783007" name_Nto1="Lien_bliotheque" name_1toN="Retour_bibliotheque" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="B1AFA3BC198D4309ABBA970ECAECAF60" name="UUID_Bibliotheque">
+				<table_ref uuid="C0860C1C2A2F42398B995C177A8EF7F8" name="Biblio_MotClef"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="E1F31A49D646400585996DA2F52E1649" name="UUID">
+				<table_ref uuid="E1B46B50C70044C9B6C49964A2B8009B" name="Bibliotheque"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="249" green="130" blue="127" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="2632C11E50444D268E45E38810AC4650" name_Nto1="Lien_client" name_1toN="Retour_client" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="D9BBE7F66A9B46D5903499C0E17B109B" name="UUID_Client">
+				<table_ref uuid="E1B46B50C70044C9B6C49964A2B8009B" name="Bibliotheque"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="2077CD2EB64E4648BC70C83AEE76E329" name="UUID">
+				<table_ref uuid="3E389B1B49D74D9889F0FDB449FABE7C" name="Client"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="252" green="191" blue="73" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="FBF5118495D34BEDA78D5C714F8A92F4" name_Nto1="Lien_groupe" name_1toN="Retour_groueclient" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="483EC7D339C64E2C8751BFB52C153912" name="UUID_Groupe">
+				<table_ref uuid="3E389B1B49D74D9889F0FDB449FABE7C" name="Client"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0434D219775348DBB07C4A835497FE73" name="UUID">
+				<table_ref uuid="3985FF18D8404EEDA0AC0DA5FB44AE25" name="Groupe"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="168" green="206" blue="226" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<index kind="regular" uuid="1215DB1D6ACE4B65A40195CE8FE63518" type="1">
+		<field_ref uuid="B9341B670211447CB2309FF28A9BCA52" name="Path_">
+			<table_ref uuid="E1B46B50C70044C9B6C49964A2B8009B" name="Bibliotheque"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="132D39BD95834782A8DA21251A77610E" type="7">
+		<field_ref uuid="8DD3FFEF583248509AD006436ED9EA9F" name="UUID">
+			<table_ref uuid="48809BB187B3443890B708EDF4590828" name="Extension"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="16783C2D35B44C13B706747CE5E5C5D3" type="3">
+		<field_ref uuid="A7D9FA1CCBAB4B4188D8C49201C8A826" name="UUID_MotClef">
+			<table_ref uuid="C0860C1C2A2F42398B995C177A8EF7F8" name="Biblio_MotClef"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="192C1DB5CFE3485AA6BEBADDFDE363D0" type="3">
+		<field_ref uuid="37BA1860451444059B1870284290BBDB" name="DossierFichier">
+			<table_ref uuid="E1B46B50C70044C9B6C49964A2B8009B" name="Bibliotheque"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="33B01E94D7004F06AEC8C2DE232A7CCA" type="1">
+		<field_ref uuid="A5478EB41ADD4F6A8975BABCA48FB425" name="Nom">
+			<table_ref uuid="48809BB187B3443890B708EDF4590828" name="Extension"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="3FA04D9E709A430ABDF3A4C90F7E3E40" type="7">
+		<field_ref uuid="0434D219775348DBB07C4A835497FE73" name="UUID">
+			<table_ref uuid="3985FF18D8404EEDA0AC0DA5FB44AE25" name="Groupe"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="49A5D7FF66F84B61A725DDB05BCB18CB" type="1">
+		<field_ref uuid="0EB5E59E299141D7B41E1ACFF94B4B29" name="Nom">
+			<table_ref uuid="E1B46B50C70044C9B6C49964A2B8009B" name="Bibliotheque"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="4CB296DC02F44219B7CC2331A0027F8D" type="7">
+		<field_ref uuid="BD688480ACA8426584F34ACABA9F4D7D" name="UUID">
+			<table_ref uuid="A244661DA02E494E8EEC7FAF89B09F00" name="Preference"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="621131D5966A46C989EFB7FFD45C3598" type="1">
+		<field_ref uuid="B1AFA3BC198D4309ABBA970ECAECAF60" name="UUID_Bibliotheque">
+			<table_ref uuid="C0860C1C2A2F42398B995C177A8EF7F8" name="Biblio_MotClef"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="8455281F3B8D4BF8B0804F962AC24C55" type="7">
+		<field_ref uuid="2077CD2EB64E4648BC70C83AEE76E329" name="UUID">
+			<table_ref uuid="3E389B1B49D74D9889F0FDB449FABE7C" name="Client"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="9B6C7486EBA34291B447FB1B0530FABD" type="7">
+		<field_ref uuid="DB0C6B2DD3D14FA6AF0A8DABA9B7DDB0" name="UUID">
+			<table_ref uuid="1D6B33D9EB8F4DBB98C714FBB4021261" name="Vignette"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="9D66C82CB695493686E83E10EC715840" type="7">
+		<field_ref uuid="75D581C1700641AFA4110EA101177F9A" name="UUID">
+			<table_ref uuid="67CAC749A29E43BD9A5BA01C6DC3C5A8" name="Mot_Clef"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="BF5474C0F1A94B79A0404D3D3D7F6342" type="7">
+		<field_ref uuid="DC52BED943BE4E869D7CC9F000F5FE93" name="UUID">
+			<table_ref uuid="C0860C1C2A2F42398B995C177A8EF7F8" name="Biblio_MotClef"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="C27BC8517CAF4B1F86CE59EDFF953072" type="1">
+		<field_ref uuid="84D7D82D508249168BC5B4EF6392C451" name="Nom">
+			<table_ref uuid="3E389B1B49D74D9889F0FDB449FABE7C" name="Client"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="CA2B76D36126440BBC2053AEAD60A122" type="7">
+		<field_ref uuid="483EC7D339C64E2C8751BFB52C153912" name="UUID_Groupe">
+			<table_ref uuid="3E389B1B49D74D9889F0FDB449FABE7C" name="Client"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="CF4DA12A3E25496C8E4444214488C3F0" type="3">
+		<field_ref uuid="D9BBE7F66A9B46D5903499C0E17B109B" name="UUID_Client">
+			<table_ref uuid="E1B46B50C70044C9B6C49964A2B8009B" name="Bibliotheque"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="DF485B8029C94013B29731E97EA471B9" type="1">
+		<field_ref uuid="ECBFB73ACE1A49E68B40A81D5404CDEC" name="Libelle">
+			<table_ref uuid="67CAC749A29E43BD9A5BA01C6DC3C5A8" name="Mot_Clef"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="EBB62A0BEA084824A543D7DB76FED2DB" type="1">
+		<field_ref uuid="D937B39DA0DA4D82A9C9E78DFFC62CF8" name="PathParent">
+			<table_ref uuid="E1B46B50C70044C9B6C49964A2B8009B" name="Bibliotheque"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="EE7AE8E115E1448B8304E7135FB08154" type="7">
+		<field_ref uuid="E1F31A49D646400585996DA2F52E1649" name="UUID">
+			<table_ref uuid="E1B46B50C70044C9B6C49964A2B8009B" name="Bibliotheque"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="F60C95828903411BB61AB078EFD01D4D" type="3">
+		<field_ref uuid="D7319E866D8F40BFAF6019D40D4DA309" name="Type">
+			<table_ref uuid="E1B46B50C70044C9B6C49964A2B8009B" name="Bibliotheque"/>
+		</field_ref>
+	</index>
+	<base_extra __stringCompHash="icu:63.1.0" __keywordBuildingHash="icu:63.1.0" data_file_path=":Data:Kymzo_Gest.4DD"/>
+</base>

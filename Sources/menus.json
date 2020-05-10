@@ -1,0 +1,156 @@
+﻿{
+	"bars": [
+		{
+			"id": 1,
+			"name": "Barre #1",
+			"picture": "/RESOURCES/images/Fond_Accueil.jpg",
+			"items": [
+				{
+					"link": 32001
+				},
+				{
+					"link": 32002
+				},
+				{
+					"link": 32003
+				},
+				{
+					"link": 32000
+				}
+			]
+		}
+	],
+	"menus": [
+		{
+			"link": 32001,
+			"title": ":xliff:CommonMenuFile",
+			"items": [
+				{
+					"title": "Préférences...",
+					"method": "Gerer_Preference",
+					"shortcutAccel": true,
+					"shortcutKey": ",",
+					"parameter": "preference"
+				},
+				{
+					"title": "Ligne 2",
+					"isSeparator": true
+				},
+				{
+					"title": ":xliff:CommonMenuItemQuit",
+					"shortcutAccel": true,
+					"shortcutKey": "Q",
+					"action": "quit"
+				}
+			]
+		},
+		{
+			"link": 32002,
+			"title": ":xliff:CommonMenuEdit",
+			"items": [
+				{
+					"title": ":xliff:CommonMenuItemUndo",
+					"shortcutAccel": true,
+					"shortcutKey": "Z",
+					"action": "undo"
+				},
+				{
+					"title": "(-",
+					"isSeparator": true
+				},
+				{
+					"title": ":xliff:CommonMenuItemCut",
+					"shortcutAccel": true,
+					"shortcutKey": "X",
+					"action": "cut"
+				},
+				{
+					"title": ":xliff:CommonMenuItemCopy",
+					"shortcutAccel": true,
+					"shortcutKey": "C",
+					"action": "copy"
+				},
+				{
+					"title": ":xliff:CommonMenuItemPaste",
+					"shortcutAccel": true,
+					"shortcutKey": "V",
+					"action": "paste"
+				},
+				{
+					"title": ":xliff:CommonMenuItemClear",
+					"action": "clear"
+				},
+				{
+					"title": ":xliff:CommonMenuItemSelectAll",
+					"shortcutAccel": true,
+					"shortcutKey": "A",
+					"action": "selectAll"
+				},
+				{
+					"title": "(-",
+					"isSeparator": true
+				},
+				{
+					"title": ":xliff:CommonMenuItemShowClipboard",
+					"action": "showClipboard"
+				}
+			]
+		},
+		{
+			"link": 32000,
+			"title": "Bibliothèques",
+			"items": [
+				{
+					"title": "Analyse des dossiers Client...",
+					"method": "Gerer_Analyse_Dossiers",
+					"parameter": "analysedossiersclient"
+				},
+				{
+					"title": "Ligne 3",
+					"isSeparator": true
+				},
+				{
+					"title": "Consulter la bibliothèque...",
+					"method": "Gerer_Bibiotheque",
+					"shortcutAccel": true,
+					"shortcutKey": "f",
+					"parameter": "bibliorechercher"
+				}
+			]
+		},
+		{
+			"link": 32003,
+			"title": "Divers",
+			"items": [
+				{
+					"title": "Analyse des extensions de fichier...",
+					"method": "Creation_Extension",
+					"parameter": "analyseextensionfichier"
+				},
+				{
+					"title": "Ligne 4",
+					"isSeparator": true
+				},
+				{
+					"title": "Liste des groupes...",
+					"method": "Gerer_Groupe",
+					"parameter": "listedesgroupes"
+				},
+				{
+					"title": "Liste des clients...",
+					"method": "Gerer_Client",
+					"parameter": "listedesclients"
+				},
+				{
+					"title": "Ligne 1",
+					"isSeparator": true
+				},
+				{
+					"title": "Liste des Mots-clés...",
+					"method": "Gerer_Mots_Cles",
+					"parameter": "listedesmotscles"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,392 @@
+﻿{
+	"destination": "detailScreen",
+	"windowTitle": "Liste des Clients",
+	"windowSizingX": "fixed",
+	"windowMinHeight": 400,
+	"rightMargin": 15,
+	"bottomMargin": 15,
+	"menuBar": "Barre #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Btn_Fermer": {
+					"type": "button",
+					"top": 365,
+					"left": 600,
+					"width": 90,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Fermer",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Titre1": {
+					"type": "text",
+					"top": 15,
+					"left": 15,
+					"width": 150,
+					"height": 17,
+					"stroke": "#212121",
+					"fontTheme": "main",
+					"text": "Liste des Mots-clés"
+				},
+				"Ligne": {
+					"type": "line",
+					"top": 33,
+					"left": 15,
+					"width": 675,
+					"sizingX": "grow",
+					"stroke": "#800080"
+				},
+				"lb_ListeMotsCles": {
+					"type": "listbox",
+					"top": 50,
+					"left": 15,
+					"width": 675,
+					"height": 303,
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "currentSelection",
+					"hideFocusRing": true,
+					"movableRows": false,
+					"headerHeight": "2em",
+					"staticColumnCount": 10,
+					"highlightSet": "$ListboxSet_ListeMotsCles",
+					"table": 5,
+					"scrollbarHorizontal": "automatic",
+					"method": "ObjectMethods/lb_ListeMotsCles.4dm",
+					"events": [
+						"onDoubleClick",
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "Col_lb_ListeMotsCles_Libelle",
+							"dataSource": "[Mot_Clef:5]Libelle:3",
+							"width": 300,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"truncateMode": "none",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_Libelle",
+								"text": "Libellé"
+							},
+							"footer": {
+								"name": "Pied1",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_Categorie",
+							"dataSource": "[Mot_Clef:5]Categorie:2",
+							"dataSourceTypeHint": "boolean",
+							"width": 40,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 11,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_Categorie",
+								"text": "Cat."
+							},
+							"footer": {
+								"name": "Pied2",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_Createur",
+							"dataSource": "[Mot_Clef:5]Createur:4",
+							"dataSourceTypeHint": "boolean",
+							"width": 40,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 11,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_Createur",
+								"text": "Créa."
+							},
+							"footer": {
+								"name": "Pied4",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_ProfCreateur",
+							"dataSource": "[Mot_Clef:5]Prof_Createur:5",
+							"dataSourceTypeHint": "boolean",
+							"width": 40,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 11,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_ProfCreateur",
+								"text": "Prof.\\Créa."
+							},
+							"footer": {
+								"name": "Pied5",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_LegendeDescriprion",
+							"dataSource": "[Mot_Clef:5]Legende_Description:6",
+							"dataSourceTypeHint": "boolean",
+							"width": 40,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 11,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_LegendeDescriprion",
+								"text": "Lég.\\Descr."
+							},
+							"footer": {
+								"name": "Pied6",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_Mention",
+							"dataSource": "[Mot_Clef:5]Mention_Copy:7",
+							"dataSourceTypeHint": "boolean",
+							"width": 40,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 11,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_Mention",
+								"text": "Ment.\\Copy."
+							},
+							"footer": {
+								"name": "Pied7",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_Fournisseur",
+							"dataSource": "[Mot_Clef:5]Fournisseur:8",
+							"dataSourceTypeHint": "boolean",
+							"width": 40,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 11,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_Fournisseur",
+								"text": "Four."
+							},
+							"footer": {
+								"name": "Pied8",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_Titre",
+							"dataSource": "[Mot_Clef:5]Titre:9",
+							"dataSourceTypeHint": "boolean",
+							"width": 40,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 11,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_Titre",
+								"text": "Titre"
+							},
+							"footer": {
+								"name": "Pied9",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_Ville",
+							"dataSource": "[Mot_Clef:5]Ville:11",
+							"dataSourceTypeHint": "boolean",
+							"width": 40,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 11,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_Ville",
+								"text": "Ville"
+							},
+							"footer": {
+								"name": "Pied10",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_ListeMotsCles_PaysRegion",
+							"dataSource": "[Mot_Clef:5]Pays_Region:10",
+							"dataSourceTypeHint": "boolean",
+							"width": 40,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 11,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeMotsCles_PaysRegion",
+								"text": "Pays\\Rég."
+							},
+							"footer": {
+								"name": "Pied11",
+								"timeFormat": "hh_mm_ss"
+							}
+						}
+					]
+				},
+				"Btn_Supprimer": {
+					"type": "button",
+					"top": 365,
+					"left": 490,
+					"width": 90,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"text": "Supprimer",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Supprimer.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"nbFiches": {
+					"type": "input",
+					"top": 39,
+					"left": 660,
+					"width": 30,
+					"height": 12,
+					"sizingX": "move",
+					"dataSourceTypeHint": "number",
+					"fontFamily": "Police système",
+					"fontSize": 9,
+					"fontStyle": "italic",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": {
+						"$ref": "/SOURCES/filters.json#/Decimale1AvecouSans"
+					},
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,248 @@
+﻿{
+	"destination": "detailScreen",
+	"windowTitle": "Liste des dossiers clients à analyser",
+	"windowSizingX": "fixed",
+	"windowMinHeight": 400,
+	"rightMargin": 15,
+	"bottomMargin": 15,
+	"menuBar": "Barre #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Btn_Fermer": {
+					"type": "button",
+					"top": 365,
+					"left": 800,
+					"width": 90,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Fermer",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Titre1": {
+					"type": "text",
+					"top": 15,
+					"left": 15,
+					"width": 280,
+					"height": 17,
+					"stroke": "#212121",
+					"fontTheme": "main",
+					"text": "Choix des dossiers Clients à analyser"
+				},
+				"Ligne": {
+					"type": "line",
+					"top": 33,
+					"left": 15,
+					"width": 875,
+					"sizingX": "grow",
+					"stroke": "#800080"
+				},
+				"lb_ListeClients": {
+					"type": "listbox",
+					"top": 50,
+					"left": 15,
+					"width": 875,
+					"height": 303,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"hideFocusRing": true,
+					"sortable": false,
+					"movableRows": false,
+					"rowHeight": "2em",
+					"staticColumnCount": 6,
+					"selectionMode": "single",
+					"scrollbarHorizontal": "automatic",
+					"rowStrokeSource": "t_Client_Coul",
+					"method": "ObjectMethods/lb_ListeClients.4dm",
+					"events": [
+						"onClick",
+						"onHeaderClick"
+					],
+					"columns": [
+						{
+							"name": "Col_t_Client_Select",
+							"dataSource": "t_Client_Select",
+							"dataSourceTypeHint": "boolean",
+							"width": 60,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"controlType": "checkbox",
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"events": [
+								"onDataChange",
+								"onBeforeDataEntry"
+							],
+							"method": "ObjectMethods/Col_t_Client_Select.4dm",
+							"header": {
+								"name": "Ent_lb_ListeClients_Actualiser",
+								"text": "Analyser"
+							},
+							"footer": {
+								"name": "Pied3",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_t_Client_Groupe",
+							"dataSource": "t_Client_Groupe",
+							"width": 200,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"wordwrap": "normal",
+							"truncateMode": "none",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeClients_GroupeNom",
+								"text": "Groupe"
+							},
+							"footer": {
+								"name": "Pied6",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_t_Client_Nom",
+							"dataSource": "t_Client_Nom",
+							"width": 200,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"wordwrap": "normal",
+							"truncateMode": "none",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeClients_Nom",
+								"text": "Nom"
+							},
+							"footer": {
+								"name": "Pied1",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_t_Client_Dossier",
+							"dataSource": "t_Client_Dossier",
+							"width": 400,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"wordwrap": "normal",
+							"truncateMode": "none",
+							"rowHeightAuto": true,
+							"verticalAlign": "middle",
+							"fontFamily": "Police système",
+							"fontSize": 11,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeClients_Dossier",
+								"text": "Dossier Travaux"
+							},
+							"footer": {
+								"name": "Pied2",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_t_Client_UUID",
+							"dataSource": "t_Client_UUID",
+							"width": 120,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"visibility": "hidden",
+							"stroke": "#FF0000",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeClients_UUID_Client",
+								"text": "UUID Client"
+							},
+							"footer": {
+								"name": "Pied4",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_t_Client_Dossier_introuvable",
+							"dataSource": "t_Client_Dossier_introuvable",
+							"dataSourceTypeHint": "boolean",
+							"width": 120,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"controlType": "checkbox",
+							"visibility": "hidden",
+							"stroke": "#FF0000",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeClients_Dossier_Introuvable",
+								"text": "Dossier introuvable"
+							},
+							"footer": {
+								"name": "Pied5",
+								"timeFormat": "hh_mm_ss"
+							}
+						}
+					]
+				},
+				"Btn_Lancer_Analyser": {
+					"type": "button",
+					"top": 365,
+					"left": 650,
+					"width": 130,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"text": "Lancer l'analyse",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Lancer_Analyser.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		}
+	]
+}

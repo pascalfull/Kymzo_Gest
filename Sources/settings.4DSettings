@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><preferences stamp="5">
+	<com.4d>
+		<deployment>
+			<options/>
+		</deployment>
+		<general startup_environnement="1"/>
+		<compiler>
+			<options compilation_path="3"/>
+		</compiler>
+		<database>
+			<cache adaptative="false" flush_buffer_delay="20s" size_fixed="1536"/>
+		</database>
+		<server>
+			<network>
+				<client_server connections_timeout="60"/>
+				<options publication_name="Kymzo_Gest"/>
+			</network>
+		</server>
+		<web>
+			<standalone_server>
+				<configuration port_number="80"/>
+			</standalone_server>
+		</web>
+		<sql>
+			<publication port_number="19812"/>
+		</sql>
+		<php ip_address="127.0.0.1"/>
+		<interface>
+			<developper design_acces="15001"/>
+			<user can_change_password="false" default_user="-11"/>
+		</interface>
+	</com.4d>
+</preferences>

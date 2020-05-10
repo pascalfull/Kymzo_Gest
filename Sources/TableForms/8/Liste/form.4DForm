@@ -1,0 +1,164 @@
+﻿{
+	"destination": "detailScreen",
+	"windowTitle": "Liste des Clients",
+	"windowSizingX": "fixed",
+	"windowMinHeight": 400,
+	"rightMargin": 15,
+	"bottomMargin": 15,
+	"menuBar": "Barre #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Btn_Fermer": {
+					"type": "button",
+					"top": 365,
+					"left": 600,
+					"width": 90,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Fermer",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Titre1": {
+					"type": "text",
+					"top": 15,
+					"left": 15,
+					"width": 150,
+					"height": 17,
+					"stroke": "#212121",
+					"fontTheme": "main",
+					"text": "Liste des Groupes"
+				},
+				"Ligne": {
+					"type": "line",
+					"top": 33,
+					"left": 15,
+					"width": 675,
+					"sizingX": "grow",
+					"stroke": "#800080"
+				},
+				"lb_ListeGroupes": {
+					"type": "listbox",
+					"top": 50,
+					"left": 15,
+					"width": 675,
+					"height": 303,
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "currentSelection",
+					"hideFocusRing": true,
+					"movableRows": false,
+					"rowHeight": "2em",
+					"staticColumnCount": 2,
+					"highlightSet": "$ListboxSet_ListeGroupes",
+					"table": 8,
+					"selectionMode": "single",
+					"scrollbarHorizontal": "automatic",
+					"method": "ObjectMethods/lb_ListeGroupes.4dm",
+					"events": [
+						"onDoubleClick",
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "Col_lb_ListeGroupes_Nom",
+							"dataSource": "[Groupe:8]Nom:2",
+							"width": 500,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"wordwrap": "normal",
+							"truncateMode": "none",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeGroupes_Nom",
+								"text": "Nom"
+							},
+							"footer": {
+								"name": "Pied1",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Col_lb_ListeClients_Actualiser",
+							"dataSource": "Choisir:C955([Groupe:8]Type:3;\"Client\";\"Eléments perso\";\"Photothèque externe\")",
+							"width": 160,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"truncateMode": "none",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Ent_lb_ListeGroupes_Type",
+								"text": "Type"
+							},
+							"footer": {
+								"name": "Pied3",
+								"timeFormat": "hh_mm_ss"
+							}
+						}
+					]
+				},
+				"Btn_Ajouter": {
+					"type": "button",
+					"top": 365,
+					"left": 380,
+					"width": 90,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"text": "Ajouter",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Ajouter.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Btn_Supprimer": {
+					"type": "button",
+					"top": 365,
+					"left": 490,
+					"width": 90,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"text": "Supprimer",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Supprimer.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		}
+	]
+}
